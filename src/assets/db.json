@@ -1,0 +1,52 @@
+{
+  "cities": [
+    {
+      "title": "Moscow",
+      "address": "Moscow, Russia",
+      "autoUpdateInterval": 60000,
+      "id": 2
+    },
+    {
+      "title": "Berlin",
+      "address": "Berlin, Germany",
+      "autoUpdateInterval": 60000,
+      "id": 4
+    },
+    {
+      "title": "Paris",
+      "address": "Paris, France",
+      "autoUpdateInterval": 60000,
+      "id": 7
+    },
+    {
+      "title": "London",
+      "address": "London, United Kingdom",
+      "autoUpdateInterval": 60000,
+      "id": 8
+    },
+    {
+      "title": "New York",
+      "address": "New York, United States",
+      "autoUpdateInterval": 60000,
+      "id": 9
+    },
+    {
+      "title": "",
+      "address": "",
+      "autoUpdateInterval": 25000,
+      "id": 10
+    },
+    {
+      "title": "Hong Kong",
+      "address": "Hong Kong, Hong Kong",
+      "autoUpdateInterval": 60000,
+      "id": 11
+    },
+    {
+      "title": "",
+      "address": "",
+      "autoUpdateInterval": 25000,
+      "id": 12
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+.city
+	span.city__header-title {{city.title}}
+	.city__header.clearfix
+		button.btn.btn-default.city__header-btn.pull-right(ng-click="vm.close(city.id)")
+			i.fa.fa-trash
+		button.btn.btn-default.city__header-btn.pull-right(ng-click="vm.updateWeather(city.address)")
+			i.fa.fa-refresh
+	.city__icon-state
+
+	img.city__weather-icon(ng-src="{{vm.weather.icon}}")
+	span.city__weather-state {{vm.weather.state}}
+	span.city__weather-temp {{vm.weather.temp}}

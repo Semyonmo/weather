@@ -1,0 +1,77 @@
+$menu-max-width: 600px;
+
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+  user-select: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__group {
+    list-style: none;
+    padding-left: 10px;
+    line-height: 30px;
+    position: relative;
+    transition: 0.4s;
+    &-icon {
+      margin-right: 10px;
+    }
+    &-arrow {
+      float: right;
+      margin-right: 15px;
+      margin-top: 7px;
+    }
+    &-list {
+      list-style: none;
+      padding-left: 20px;
+    }
+    &:hover {
+      background-color: gray;
+      cursor: pointer;
+    }
+  }
+  &__item {
+    padding-left: 10px;
+    line-height: 30px;
+    &:hover {
+      background-color: gray;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+    &-active {
+      background-color: dimgray;
+      color: white;
+    }
+    &-icon {
+      margin-right: 10px;
+    }
+  }
+  &__area {
+    background-color: darkgray;
+    height: calc(100vh - 70px);
+    position: absolute;
+    width: 200px;
+    left: 0;
+    top: 70px;
+    bottom: 0;
+    z-index: 99;
+    overflow-x: auto;
+
+    //animate
+    transform: matrix3d(1, 0, 0.00, 0, 0.00, 1, 0.00, 0, 0, 0, 1, 0, -200, 0, 0, 1);
+    transform-origin: left center 0px;
+
+    opacity: 0.999999;
+    transition: transform 0.6s ease;
+
+    &-visible {
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+  }
+}

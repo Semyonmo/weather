@@ -1,0 +1,8 @@
+li.menu__group(ng-click="toggleGroup()")
+	i(ng-class="icon").fa.menu__group-icon
+	span {{label}}
+	i.fa.fa-caret-down.menu__group-arrow(ng-class="{'fa-rotate-90': !isOpen}")
+
+div(ng-show="isOpen")
+	ul.menu__group-list
+		div(ng-transclude)

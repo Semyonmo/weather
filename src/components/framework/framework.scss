@@ -1,0 +1,49 @@
+$header-max-width: 600px;
+
+.framework {
+  &__header {
+    padding: 10px 15px 0 75px;
+    margin: 0px -15px;
+    background-color: gray;
+    position: relative;
+    height: 73px;
+    z-index: 101;
+    @media screen and (max-width: $header-max-width) {
+      padding-left: 15px;
+    }
+    &-icon {
+      height: 52px;
+      width: 52px;
+      background-color: darkgray;
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      @media screen and (max-width: $header-max-width) {
+        display: none;
+      }
+    }
+    &-title {
+      display: inline-block;
+      font-size: 30px;
+      margin: 0;
+      color: white;
+    }
+    &-subtitle {
+      display: inline-block;
+      font-size: 12px;
+      margin: 0;
+      color: white;
+    }
+    &-btn-menu {
+      position: absolute;
+      right: 15px;
+      top: 20px;
+      border: 0;
+      border-radius: 0 !important;
+      padding-top: 8px;
+      outline: 0 !important;
+    }
+  }
+}
+
+

@@ -1,0 +1,22 @@
+.cities__header
+	span.cities__header-title {{vm.title}}
+
+.cities
+	.cities__list
+		div(ng-repeat="city in vm.cities")
+			city
+
+
+.add-city__wrapper
+	form(name="addCityForm", ng-submit="vm.addCity(vm.newCity)")
+		input.add-city__input(required, select-city, type="text", placeholder="New Delhi,India", select="vm.newCity")
+		select(required, name="interval",ng-model="vm.newCity.autoUpdateInterval", ng-options="interval.value as interval.label for interval in vm.intervalsList")
+			option(value="") Select update interval time
+		input.btn.btn-default.add-city__btn(type="submit", value="submit")
+
+
+
+
+
+
+

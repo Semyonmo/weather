@@ -1,0 +1,156 @@
+@function top-shadow($depth) {
+  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
+  $color: rgba(black, nth(.12 .16 .19 .25 .30, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+@function bottom-shadow($depth) {
+  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+  $blur: nth(1 3 3 5 6, $depth) * 4px;
+  $color: rgba(black, nth(.24 .23 .23 .22 .22, $depth));
+
+  @return 0 $primary-offset $blur $color;
+}
+
+@mixin card($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);
+  }
+}
+
+.cities {
+  position: relative;
+  &__list {
+    margin-top: 10px;
+
+    //flex
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  &__header {
+    background-color: darkgray;
+    margin: 0 -15px;
+    padding: 0 15px;
+    &-title {
+      display: inline-block;
+      font-size: 26px;
+      color: white;
+    }
+  }
+
+  &__add {
+
+  }
+}
+
+.city {
+  position: relative;
+  @include card(1);
+  margin: 5px;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  //flex
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+  &__header {
+    position: relative;
+    padding: 5px;
+    opacity: 0.00001;
+    transition: opacity 0.2s ease;
+    &-btn {
+      margin-left: 10px;
+      color: gray;
+    }
+    &-title {
+      color: black;
+      display: inline-block;
+      font-size: 13px;
+      margin-top: 2px;
+      position: absolute;
+      top: -20px;
+    }
+  }
+  &__weather {
+    &-state {
+      color: black;
+      display: inline-block;
+      font-size: 13px;
+      margin-top: 2px;
+      position: absolute;
+      right: 3px;
+      bottom: 0;
+    }
+    &-temp {
+      color: black;
+      display: inline-block;
+      font-size: 13px;
+      margin-top: 2px;
+      position: absolute;
+      left: 3px;
+      bottom: 0;
+    }
+    &-icon {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 0;
+    }
+  }
+  &:hover {
+    .city__header {
+      opacity: 0.99999;
+    }
+  }
+}
+
+.add-city {
+  &__input {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  &__btn {
+    padding: 7px 10px 7px;
+    border-radius: 0;
+    font-size: 12px;
+    border-color: #adadad;
+  }
+  &__wrapper {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
