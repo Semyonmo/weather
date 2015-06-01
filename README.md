@@ -1,7 +1,20 @@
-# weather
+# Weather application
 
-для запуска
-npm i //установка
-gulp //запуск
+### Run
 
-http://localhost:3000
+```sh
+$ npm i
+```
+
+```sh
+$ npm i -g gulp
+```
+```sh
+$ gulp
+```
+
+### Plugins
+
+* Gulp
+* Webpack
+* json-server
