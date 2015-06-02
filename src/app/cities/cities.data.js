@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 export default
 angular.module('app.cities.data', [])
-    .factory('citiesDataService', citiesDataService);
+    .factory('citiesDataService', 'logger', citiesDataService);
 
 
 /* @ngInject */
