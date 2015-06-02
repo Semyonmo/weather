@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var logger = require('../util/compileLogger');
 var browserSync = require('browser-sync');
 
-gulp.task("webpack", function (callback) {
+gulp.task("webpack", ['angular-templates', 'angular-components-templates'], function (callback) {
     var built = false;
 
     webpack(config).watch(400, function (err, stats) {

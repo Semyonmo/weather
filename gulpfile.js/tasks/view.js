@@ -9,7 +9,7 @@ var configAngularComponentsTemplates = require('../config').angularComponentTemp
 
 var templateCache = require('gulp-angular-templatecache');
 
-gulp.task('view', ['angular-templates', 'angular-components-templates'], function () {
+gulp.task('view', function () {
     return gulp.src(configView.src)
         .pipe(jade({
             pretty: true,
