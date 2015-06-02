@@ -2,11 +2,11 @@ import _ from 'lodash';
 
 export default
 angular.module('app.cities.data', [])
-    .factory('citiesDataService', 'logger', citiesDataService);
+    .factory('citiesDataService', citiesDataService);
 
 
 /* @ngInject */
-function citiesDataService($http) {
+function citiesDataService($http, logger) {
     "use strict";
 
     var api = "http://localhost:4500";
